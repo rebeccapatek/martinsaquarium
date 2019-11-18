@@ -1,0 +1,85 @@
+
+body {
+    background-color: paleturquoise;
+  }
+  
+  .content{
+    display: flex;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  .nav {
+    display:flex;  
+    justify-content:space-evenly;
+  }
+  .fishies {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    justify-content: space-evenly;
+    
+  }
+  
+  .fishies__card {
+    flex-basis: 30%;
+    border: 2px solid darkblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(0,0,139,0.5);
+  }
+  
+  aside{
+    width: 30%;
+    border: 1px solid darkblue;
+    padding: 5px;
+  }
+
+  .quotes {
+      border: 1px dotted black;
+      padding: 5px;
+      color:navy;
+  }
+  .tips {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+      flex-basis: 10%;
+      border: 4px dotted black;
+      margin-top: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .locations {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    
+  }
+  .Locations__each {
+    flex-basis:25%;
+    justify-content: space-evenly;
+    border: 5px solid blue;
+    margin: 2px;
+    padding: 8px;
+    background-color: rgba(0,0,139,0.5);
+
+  }
+
+  @media (max-width: 600px) {
+    .content {
+        display:block;
+    }
+    .fishies {
+       width: 100%;
+    }
+  
+    aside {
+       width: 100%;
+    }
+    
+  }
+
