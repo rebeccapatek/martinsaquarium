@@ -29,6 +29,11 @@ body {
     margin-bottom: 10px;
     background-color: rgba(0,0,139,0.5);
   }
+  .highlightFish {
+    background-color: darkgoldenrod;
+    color: lightgoldenrodyellow;
+}
+
   
   aside{
     width: 30%;
