@@ -13,48 +13,20 @@ const initializeDetailButtonEvents = () => {
     }
     // CAN'T TOUCH THIS - END
  // Show Bart's details when the button is clicked
- document.querySelector("#button--goldilocks").addEventListener(
-    "click",
-    theClickEvent => {
-        const theDialog = document.querySelector("#details--goldilocks")
-        theDialog.showModal()
-    }
-)
-document.querySelector("#button--bitey").addEventListener(
-    "click",
-    theClickEvent => {
-        const theDialog = document.querySelector("#details--bitey")
-        theDialog.showModal()
-    }
-) 
-document.querySelector("#button--mr").addEventListener(
-    "click",
-    theClickEvent => {
-        const theDialog = document.querySelector("#details--mr")
-        theDialog.showModal()
-    }
-) 
-document.querySelector("#button--jaws").addEventListener(
-    "click",
-    theClickEvent => {
-        const theDialog = document.querySelector("#details--jaws")
-        theDialog.showModal()
-    }
-) 
-document.querySelector("#button--snappy").addEventListener(
-    "click",
-    theClickEvent => {
-        const theDialog = document.querySelector("#details--snappy")
-        theDialog.showModal()
-    }
-) 
-document.querySelector("#button--purpur").addEventListener(
-    "click",
-    theClickEvent => {
-        const theDialog = document.querySelector("#details--purpur")
-        theDialog.showModal()
-    }
-)
+     // Get a reference to all buttons that start with "button--"
+const allDetailButtons = document.querySelectorAll("button[id^='button--']")
+
+     // Add an event listener to each one
+     for (const btn of allDetailButtons) {
+         btn.addEventListener(
+             "click",
+             theEvent => {
+                 const dialogSiblingSelector = `#${theEvent.target.id}+dialog`
+                 const theDialog = document.querySelector(dialogSiblingSelector)
+                 theDialog.showModal()
+             }
+         )
+     }
     // You will be writing code below this line
 
 }
