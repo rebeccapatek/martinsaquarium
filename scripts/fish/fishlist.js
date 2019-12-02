@@ -9,29 +9,22 @@ import FishComponent from "./Fish.js"
 const FishListComponent = () => {
 
     // Get a reference to the `<article class="content">` element
-    const contentElement = document.querySelector(".content")
+    const contentElement = document.querySelector(".fistlist") 
+    // What does this do?Pull content from FishListComponent.js?
     const fishes = useFish()
-
+    // the constant now equals the data in the array because this invokes it to return it
     // Add to the existing HTML in the content element
-    let fishHTMLRepresentations = ""
-    for (const fish of fishes) {
-        /*
-            Invoke the FishComponent component function
-            and pass the current fish object as an argument.
-            Each time, add the return value to the
-            fishHTMLRepresentations variable with `+=`
-        */
-       const details = FishComponent(fish) 
-
+    // NEED TO ADD CONST SORTED FISH HERE 
+    // Is this fishList referencing my javascript file or a constant that I established?
     
-    }
-
-    // Add a section, and all of the fish to the DOM
     contentElement.innerHTML += `
-        <section class="fishList">
-            ${fishHTMLRepresentations}
-        </section>
-    `
-}
-
-export default FishListComponent
+      <section class="fishList">
+          ${sortedFish
+            .map(currentfish => {
+              return FishComponent(currentfish);
+            })
+            .join("")}
+      </section>
+  `;
+};
+export default FishListComponent;
